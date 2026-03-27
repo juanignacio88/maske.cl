@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maske | Insumos Médicos de Alta Calidad</title>
+    <meta name="description" content="Catálogo B2B de insumos médicos en Providencia. Protección facial, diagnóstico corporativo y desechables con entrega rápida garantizada.">
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <i class="ph-fill ph-first-aid-kit"></i> Maske<span>.cl</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#hero">Inicio</a>
+                <a href="#diferenciales">Por qué Maske</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn-quote" id="openQuoteBtn">
+                    <i class="ph ph-bag"></i> 
+                    <span class="quote-text">Cotización</span>
+                    <span class="badge" id="quoteBadge">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" style="background-image: url('assets/hero-bg.png');"></div>
+        <div class="container hero-container">
+            <div class="hero-content glass-card">
+                <span class="tagline">Confianza y Precisión</span>
+                <h1>Insumos Médicos de Alta Calidad en Providencia</h1>
+                <p>Abastecemos a clínicas, profesionales y particulares con rapidez, stock garantizado y el respaldo de marcas certificadas.</p>
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn btn-primary">
+                        Explorar Catálogo <i class="ph ph-arrow-right"></i>
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        Hablemos por Whatsapp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciales -->
+    <section id="diferenciales" class="diferenciales py-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>El socio estratégico de tu consulta</h2>
+                <p>Nuestra prioridad es que nunca te falte lo esencial para atender a tus pacientes.</p>
+            </div>
+            <div class="grid grid-4 text-center mt-5">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="ph ph-truck"></i></div>
+                    <h3>Despacho Rápido</h3>
+                    <p>Entregas eficientes dentro de la RM para mantener tu clínica operativa.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="ph ph-package"></i></div>
+                    <h3>Stock Garantizado</h3>
+                    <p>Volumen constante en bodegas para suplir cualquier emergencia médica.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="ph ph-users"></i></div>
+                    <h3>Atención Personalizada</h3>
+                    <p>Asesoría experta B2B para optimizar las compras de tu institución.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="ph ph-map-pin"></i></div>
+                    <h3>Ubicación Central</h3>
+                    <p>Estratégicamente ubicados en Providencia para retiros express.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="proceso py-section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>¿Cómo cotizar en Maske?</h2>
+                <p>Un proceso diseñado para ser rápido, sin complicaciones y adaptable a tus tiempos.</p>
+            </div>
+            <div class="steps-wrapper mt-5">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Selecciona</h4>
+                        <p>Añade los insumos que necesitas a tu bandeja de cotización desde nuestro catálogo online.</p>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Revisa y Envía</h4>
+                        <p>Verifica tus productos y envíanos tu lista con un solo clic vía WhatsApp o Correo.</p>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Aprobación Rápida</h4>
+                        <p>Recibirás un presupuesto formal en minutos y programamos el despacho de inmediato.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="catalogo py-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro Catálogo</h2>
+                <p>Materiales con certificaciones internacionales e ISP para su total seguridad.</p>
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Buscar producto... (ej: guante, jeringa, mascarilla)">
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="guantes">Guantes</button>
+                <button class="filter-btn" data-filter="gasas_y_compresas">Gasas y Compresas</button>
+                <button class="filter-btn" data-filter="proteccion">Protección</button>
+                <button class="filter-btn" data-filter="packs_quirurgicos">Packs Quirúrgicos</button>
+                <button class="filter-btn" data-filter="jeringas">Jeringas</button>
+                <button class="filter-btn" data-filter="sondas_y_recolectores">Sondas</button>
+                <button class="filter-btn" data-filter="varios">Varios</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="product-grid" id="productGrid">
+                <!-- Los productos se inyectarán vía JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo-white">
+                        <i class="ph-fill ph-first-aid-kit"></i> Maske<span>.cl</span>
+                    </a>
+                    <p class="mt-2">Excelencia en insumos médicos. Cuidando de ti para que cuides de otros.</p>
+                    
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="ph ph-envelope-simple"></i> ventas@maske.cl</p>
+                    <p><i class="ph ph-whatsapp-logo"></i> +56 9 1234 5678</p>
+                    <p><i class="ph ph-map-pin"></i> Av. Providencia 1234, Oficina 56, Santiago</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maske.cl. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Offcanvas Bandeja de Cotización -->
+    <div class="offcanvas-overlay" id="quoteOverlay"></div>
+    <div class="offcanvas-quote" id="quotePanel">
+        <div class="offcanvas-header">
+            <h3><i class="ph-fill ph-bag"></i> Tu Cotización</h3>
+            <button class="close-btn" id="closeQuoteBtn"><i class="ph ph-x"></i></button>
+        </div>
+        
+        <div class="offcanvas-body" id="quoteItems">
+            <!-- Items de la bandeja inyectados por JS -->
+            <div class="empty-quote">
+                <i class="ph ph-package"></i>
+                <p>Tu bandeja está vacía.<br>Agrega productos del catálogo.</p>
+            </div>
+        </div>
+
+        <div class="offcanvas-footer">
+            <p class="total-warning"><i class="ph ph-info"></i> El precio final se enviará en el presupuesto formal sujeto a volumen.</p>
+            <div class="quote-actions">
+                <button class="btn btn-whatsapp w-100 mb-2" id="sendWhatsappBtn" disabled>
+                    <i class="ph-fill ph-whatsapp-logo"></i> Cotizar por WhatsApp
+                </button>
+                <button class="btn btn-outline w-100" id="sendEmailBtn" disabled>
+                    <i class="ph ph-envelope"></i> Cotizar por Email
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ficha Técnica -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="closeModalBtn"><i class="ph ph-x"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <i class="ph ph-package placeholder-modal" id="modalIcon"></i>
+                </div>
+                <div class="modal-info">
+                    <span class="product-cat" id="modalCat">Categoría</span>
+                    <h2 class="product-title" id="modalTitle">Título Producto</h2>
+                    <p class="product-desc" id="modalDesc">Descripción completa del producto.</p>
+                    
+                    <div class="tech-specs mt-3">
+                        <div class="spec-row"><span>SKU:</span> <span id="modalSku">MK-0000</span></div>
+                        <div class="spec-row"><span>Empaque:</span> <span id="modalPack">Caja x50</span></div>
+                    </div>
+
+                    <button class="btn btn-primary w-100 mt-5" id="modalAddBtn">
+                        <i class="ph ph-plus-circle"></i> Agregar a cotización
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
