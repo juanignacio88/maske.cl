@@ -45,6 +45,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch datos desde Google Sheets
     await loadProductsFromSheet();
     
+    // Debug: mostrar estructura de datos recibidos
+    console.log('Productos cargados:', productsData.length);
+    if (productsData.length > 0) {
+        console.log('Primer producto:', productsData[0]);
+        console.log('Keys disponibles:', Object.keys(productsData[0]));
+    }
+    
     // Render inicial
     renderProducts();
 });
@@ -207,7 +214,10 @@ function initFilterButtons() {
 
 // Actualizar filtros de sub-categoría dinámicamente
 function updateSubCategoryFilters() {
-    if (!subCategoryFilters) return;
+    if (!subCategoryFilters) {
+        console.log('No se encontró el contenedor de sub-filtros');
+        return;
+    }
     
     if (currentFilter === 'all') {
         subCategoryFilters.style.display = 'none';
@@ -216,12 +226,20 @@ function updateSubCategoryFilters() {
     }
     
     // Obtener sub-categorías únicas de la categoría seleccionada
+    const categoryProducts = productsData.filter(p => p.category.toLowerCase() === currentFilter.toLowerCase());
+    console.log(`Productos en categoría ${currentFilter}:`, categoryProducts.length);
+    
     const subCats = [...new Set(
-        productsData
-            .filter(p => p.category.toLowerCase() === currentFilter.toLowerCase())
-            .map(p => p.sub_category || p['sub category'])
+        categoryProducts
+            .map(p => {
+                const sub = p.sub_category || p['sub category'] || p['sub_category'];
+                console.log('Producto:', p.title, '- sub_category:', sub);
+                return sub;
+            })
             .filter(sc => sc && sc.trim())
     )];
+    
+    console.log('Sub-categorías encontradas:', subCats);
     
     if (subCats.length === 0) {
         subCategoryFilters.style.display = 'none';
