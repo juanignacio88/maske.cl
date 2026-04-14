@@ -249,7 +249,7 @@ function updateSubCategoryFilters() {
     }
     
     // Generar botones de sub-categoría
-    let html = '<button class="filter-btn sub-filter-btn active" data-sub-filter="all">Todas</button>';
+    let html = '<button class="filter-btn sub-filter-btn active" data-sub-filter="all">Todos</button>';
     subCats.forEach(subCat => {
         html += `<button class="filter-btn sub-filter-btn" data-sub-filter="${subCat.toLowerCase()}">${subCat}</button>`;
     });
@@ -441,8 +441,7 @@ function generateQuoteText() {
 
 function generateWhatsappLink() {
     const text = generateQuoteText();
-    // Número base de whatsapp de venta (placeholder)
-    const phone = "56912345678"; 
+    const phone = "56968481545"; 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 }
