@@ -73,8 +73,9 @@ function parseCSV(text) {
     const result = [];
     if(lines.length < 2) return [];
 
-    // Header esperado: id, title, category, desc, image, pack
+    // Header esperado: id, title, category, sub_category, desc, image, pack
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+    console.log('Headers parseados:', headers);
 
     for (let i = 1; i < lines.length; i++) {
         if (!lines[i].trim()) continue;
