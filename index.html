@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maske | Insumos Médicos de Alta Calidad</title>
-    <meta name="description" content="Catálogo B2B de insumos médicos en Providencia. Protección facial, diagnóstico corporativo y desechables con entrega rápida garantizada.">
-    
+    <meta name="description"
+        content="Catálogo B2B de insumos médicos en Providencia. Protección facial, diagnóstico corporativo y desechables con entrega rápida garantizada.">
+
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
     <!-- Header & Navigation -->
@@ -25,7 +30,7 @@
             <a href="#" class="logo">
                 <i class="ph-fill ph-first-aid-kit"></i> Maske<span>.cl</span>
             </a>
-            
+
             <nav class="nav-links">
                 <a href="#hero">Inicio</a>
                 <a href="#diferenciales">Por qué Maske</a>
@@ -35,7 +40,7 @@
 
             <div class="nav-actions">
                 <button class="btn-quote" id="openQuoteBtn">
-                    <i class="ph ph-bag"></i> 
+                    <i class="ph ph-bag"></i>
                     <span class="quote-text">Cotización</span>
                     <span class="badge" id="quoteBadge">0</span>
                 </button>
@@ -52,8 +57,9 @@
         <div class="container hero-container">
             <div class="hero-content glass-card">
                 <span class="tagline">Confianza y Precisión</span>
-                <h1>Insumos Médicos de Alta Calidad en Providencia</h1>
-                <p>Abastecemos a clínicas, profesionales y particulares con rapidez, stock garantizado y el respaldo de marcas certificadas.</p>
+                <h1>Insumos Médicos de Alta Calidad</h1>
+                <p>Abastecemos a clínicas, profesionales y particulares con rapidez, stock garantizado y el respaldo de
+                    marcas certificadas.</p>
                 <div class="hero-buttons">
                     <a href="#catalogo" class="btn btn-primary">
                         Explorar Catálogo <i class="ph ph-arrow-right"></i>
@@ -90,9 +96,9 @@
                     <p>Asesoría experta B2B para optimizar las compras de tu institución.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon-wrapper"><i class="ph ph-map-pin"></i></div>
-                    <h3>Ubicación Central</h3>
-                    <p>Estratégicamente ubicados en Providencia para retiros express.</p>
+                    <div class="icon-wrapper"><i class="ph ph-moped"></i></div>
+                    <h3>Despachos sin costos para la zona Oriente</h3>
+                    <p>Entrega gratuita directo con mínimo de compra.</p>
                 </div>
             </div>
         </div>
@@ -147,8 +153,8 @@
                 <input type="text" id="searchInput" placeholder="Buscar producto... (ej: guante, jeringa, mascarilla)">
             </div>
 
-            <!-- Filtros -->
-            <div class="filters">
+            <!-- Filtros Categoría -->
+            <div class="filters" id="categoryFilters">
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="guantes">Guantes</button>
                 <button class="filter-btn" data-filter="gasas_y_compresas">Gasas y Compresas</button>
@@ -157,6 +163,11 @@
                 <button class="filter-btn" data-filter="jeringas">Jeringas</button>
                 <button class="filter-btn" data-filter="sondas_y_recolectores">Sondas</button>
                 <button class="filter-btn" data-filter="varios">Varios</button>
+            </div>
+
+            <!-- Filtros Sub-Categoría (dinámico) -->
+            <div class="filters sub-filters" id="subCategoryFilters" style="display: none;">
+                <!-- Se genera dinámicamente vía JS -->
             </div>
 
             <!-- Grid de Productos -->
@@ -175,13 +186,13 @@
                         <i class="ph-fill ph-first-aid-kit"></i> Maske<span>.cl</span>
                     </a>
                     <p class="mt-2">Excelencia en insumos médicos. Cuidando de ti para que cuides de otros.</p>
-                    
+
                     <div class="social-links mt-3">
                         <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
                         <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h4>Contacto</h4>
                     <p><i class="ph ph-envelope-simple"></i> ventas@maske.cl</p>
@@ -202,7 +213,7 @@
             <h3><i class="ph-fill ph-bag"></i> Tu Cotización</h3>
             <button class="close-btn" id="closeQuoteBtn"><i class="ph ph-x"></i></button>
         </div>
-        
+
         <div class="offcanvas-body" id="quoteItems">
             <!-- Items de la bandeja inyectados por JS -->
             <div class="empty-quote">
@@ -212,7 +223,8 @@
         </div>
 
         <div class="offcanvas-footer">
-            <p class="total-warning"><i class="ph ph-info"></i> El precio final se enviará en el presupuesto formal sujeto a volumen.</p>
+            <p class="total-warning"><i class="ph ph-info"></i> El precio final se enviará en el presupuesto formal
+                sujeto a volumen.</p>
             <div class="quote-actions">
                 <button class="btn btn-whatsapp w-100 mb-2" id="sendWhatsappBtn" disabled>
                     <i class="ph-fill ph-whatsapp-logo"></i> Cotizar por WhatsApp
@@ -236,7 +248,7 @@
                     <span class="product-cat" id="modalCat">Categoría</span>
                     <h2 class="product-title" id="modalTitle">Título Producto</h2>
                     <p class="product-desc" id="modalDesc">Descripción completa del producto.</p>
-                    
+
                     <div class="tech-specs mt-3">
                         <div class="spec-row"><span>SKU:</span> <span id="modalSku">MK-0000</span></div>
                         <div class="spec-row"><span>Empaque:</span> <span id="modalPack">Caja x50</span></div>
@@ -253,4 +265,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

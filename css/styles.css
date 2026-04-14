@@ -597,6 +597,29 @@ img {
     border-color: var(--primary);
 }
 
+/* Sub-filtros de categoría */
+.sub-filters {
+    margin-top: -20px;
+    margin-bottom: 40px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.sub-filters .filter-btn {
+    font-size: 0.85rem;
+    padding: 6px 18px;
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background: transparent;
+}
+
+.sub-filters .filter-btn.active,
+.sub-filters .filter-btn:hover {
+    background-color: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

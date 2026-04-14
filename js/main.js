@@ -2,10 +2,12 @@
 let productsData = [];
 let quoteItems = [];
 let currentFilter = 'all';
+let currentSubFilter = 'all';
 let currentSearch = '';
 
 // Elementos del DOM
 const productGrid = document.getElementById('productGrid');
+const subCategoryFilters = document.getElementById('subCategoryFilters');
 const quoteBadge = document.getElementById('quoteBadge');
 const openQuoteBtn = document.getElementById('openQuoteBtn');
 const closeQuoteBtn = document.getElementById('closeQuoteBtn');
@@ -119,6 +121,13 @@ function renderProducts() {
         ? productsData 
         : productsData.filter(p => p.category.toLowerCase() === currentFilter.toLowerCase());
 
+    // Aplicar filtro de sub-categoría
+    if (currentSubFilter !== 'all') {
+        filtered = filtered.filter(p => 
+            (p.sub_category || p['sub category'] || '').toLowerCase() === currentSubFilter.toLowerCase()
+        );
+    }
+
     // Aplicar búsqueda de texto sobre los resultados filtrados
     if (currentSearch) {
         const terms = currentSearch.toLowerCase().split(/\s+/);
@@ -183,12 +192,58 @@ function getCategoryName(cat) {
 
 // Filtros de Categorías
 function initFilterButtons() {
-    const buttons = document.querySelectorAll('.filter-btn');
+    const buttons = document.querySelectorAll('#categoryFilters .filter-btn');
     buttons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             buttons.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentFilter = e.target.getAttribute('data-filter');
+            currentSubFilter = 'all'; // Reset sub-filtro al cambiar categoría
+            updateSubCategoryFilters();
+            renderProducts();
+        });
+    });
+}
+
+// Actualizar filtros de sub-categoría dinámicamente
+function updateSubCategoryFilters() {
+    if (!subCategoryFilters) return;
+    
+    if (currentFilter === 'all') {
+        subCategoryFilters.style.display = 'none';
+        subCategoryFilters.innerHTML = '';
+        return;
+    }
+    
+    // Obtener sub-categorías únicas de la categoría seleccionada
+    const subCats = [...new Set(
+        productsData
+            .filter(p => p.category.toLowerCase() === currentFilter.toLowerCase())
+            .map(p => p.sub_category || p['sub category'])
+            .filter(sc => sc && sc.trim())
+    )];
+    
+    if (subCats.length === 0) {
+        subCategoryFilters.style.display = 'none';
+        subCategoryFilters.innerHTML = '';
+        return;
+    }
+    
+    // Generar botones de sub-categoría
+    let html = '<button class="filter-btn sub-filter-btn active" data-sub-filter="all">Todas</button>';
+    subCats.forEach(subCat => {
+        html += `<button class="filter-btn sub-filter-btn" data-sub-filter="${subCat.toLowerCase()}">${subCat}</button>`;
+    });
+    
+    subCategoryFilters.innerHTML = html;
+    subCategoryFilters.style.display = 'flex';
+    
+    // Agregar event listeners a los nuevos botones
+    document.querySelectorAll('.sub-filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.sub-filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentSubFilter = e.target.getAttribute('data-sub-filter');
             renderProducts();
         });
     });
