@@ -960,10 +960,65 @@ img {
     padding-top: 20px;
     text-align: center;
     font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Developer Credit - jfaundez.tech branding */
+.developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.developer-credit span {
+    font-weight: 400;
+}
+
+.jfaundez-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.jfaundez-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a855f7 100%);
+}
+
+.jfaundez-dot {
+    width: 6px;
+    height: 6px;
+    background: #00d4ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00d4ff;
+}
+
+.jfaundez-tech {
+    color: #00d4ff;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* ==========================================================================
